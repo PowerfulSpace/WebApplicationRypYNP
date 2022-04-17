@@ -1,0 +1,130 @@
+﻿@model IEnumerable<Payer>
+
+@{
+    ViewData["Title"] = "SearchPage";
+}
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+<h1>SearchPage</h1>
+
+
+<div class="col-4 p-0 justify-content-end mt-1">
+    <form asp-action="SearchPage">
+        <span class="btn-group">
+            <input class="form-control" type="text" name="searchText" value="@ViewBag.SearchText" placeholder="Search VUNP or Email" />
+            <input class="p-1 ml-2 btn btn-sm btn-danger" style="border-radius:10px;" type="submit" value="Search" />
+        </span>
+    </form>
+</div>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>VUNP</th>
+            <th>Email</th>
+            <th class="table-bordered">LocalDB</th>
+            <th class="table-bordered">ServerDB</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VUNP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td class="table-bordered">
+                @ViewBag.Local
+            </td>
+            <td class="table-bordered">
+                @ViewBag.Server
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VUNP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VNAIMP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VNAIMK)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DREG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NMNS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VMNS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CKODSOST)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VKODS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DLIKV)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VLIKV)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VUNP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VNAIMP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VNAIMK)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DREG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NMNS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VMNS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CKODSOST)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VKODS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DLIKV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VLIKV)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
