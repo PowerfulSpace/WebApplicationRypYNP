@@ -18,7 +18,7 @@ namespace WebApplicationRypYNP.Models.EmailModel
         string toEmail = "";
 
 
-
+        
         public async Task SendMessageAsync(string email)
         {
             try

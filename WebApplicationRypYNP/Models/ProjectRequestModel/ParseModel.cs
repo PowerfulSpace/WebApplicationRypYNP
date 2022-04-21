@@ -40,6 +40,21 @@ namespace WebApplicationRypYNP.Models.ProjectRequestModel
         }
 
 
+        //public async Task<Payer> GetModelParseAsync(string searchText)
+        //{
+        //    var payerFromTheServer = await GetResponseAsync(searchText);
+        //    if(payerFromTheServer is null) { return null; }
+        //    //Payer payer = payerFromTheServer["ROW"].ToObject<Payer>();
+
+        //    var json = JObject.Parse(payerFromTheServer);
+        //    var row = json["ROW"];
+
+        //    Payer payer = row.ToObject<Payer>();
+
+
+        //    return payer;
+        //}
+
 
         private async Task<string> GetResponseAsync(string vunpModel)
         {
